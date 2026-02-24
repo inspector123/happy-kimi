@@ -576,6 +576,10 @@ export async function runKimi(opts: {
           throw new Error('ACP session not started');
         }
 
+        if (!kimiBackend) {
+          throw new Error('Kimi backend not initialized');
+        }
+
         accumulatedResponse = '';
         isResponseInProgress = false;
         hadToolCallInTurn = false;
