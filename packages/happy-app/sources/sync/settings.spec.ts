@@ -502,7 +502,7 @@ describe('settings', () => {
                     id: crypto.randomUUID(),
                     name: 'Test Profile',
                     defaultPermissionMode: mode,
-                    compatibility: { claude: true, codex: true },
+                    compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                 };
                 expect(() => AIBackendProfileSchema.parse(profile)).not.toThrow();
             });
@@ -513,7 +513,7 @@ describe('settings', () => {
                 id: crypto.randomUUID(),
                 name: 'Test Profile',
                 defaultPermissionMode: 'invalid-mode',
-                compatibility: { claude: true, codex: true },
+                compatibility: { claude: true, codex: true, gemini: true, kimi: true },
             };
             expect(() => AIBackendProfileSchema.parse(profile)).toThrow();
         });
@@ -526,7 +526,7 @@ describe('settings', () => {
                     { name: 'VALID_VAR_123', value: 'test' },
                     { name: 'API_KEY', value: '${SECRET}' },
                 ],
-                compatibility: { claude: true, codex: true },
+                compatibility: { claude: true, codex: true, gemini: true, kimi: true },
             };
             expect(() => AIBackendProfileSchema.parse(validProfile)).not.toThrow();
         });
@@ -538,7 +538,7 @@ describe('settings', () => {
                 environmentVariables: [
                     { name: 'invalid-name', value: 'test' },
                 ],
-                compatibility: { claude: true, codex: true },
+                compatibility: { claude: true, codex: true, gemini: true, kimi: true },
             };
             expect(() => AIBackendProfileSchema.parse(invalidProfile)).toThrow();
         });
@@ -562,7 +562,7 @@ describe('settings', () => {
                         name: 'Server Profile',
                         anthropicConfig: {},
                         environmentVariables: [],
-                        compatibility: { claude: true, codex: true, gemini: true },
+                        compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                         isBuiltIn: false,
                         createdAt: Date.now(),
                         updatedAt: Date.now(),
@@ -580,7 +580,7 @@ describe('settings', () => {
                         name: 'Local Profile',
                         anthropicConfig: {},
                         environmentVariables: [],
-                        compatibility: { claude: true, codex: true, gemini: true },
+                        compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                         isBuiltIn: false,
                         createdAt: Date.now(),
                         updatedAt: Date.now(),
@@ -682,7 +682,7 @@ describe('settings', () => {
                     name: 'Test',
                     anthropicConfig: {},
                     environmentVariables: [],
-                    compatibility: { claude: true, codex: true, gemini: true },
+                    compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                     isBuiltIn: false,
                     createdAt: Date.now(),
                     updatedAt: Date.now(),
@@ -715,7 +715,7 @@ describe('settings', () => {
                     name: 'Device B Profile',
                     anthropicConfig: {},
                     environmentVariables: [],
-                    compatibility: { claude: true, codex: true },
+                    compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                     isBuiltIn: false,
                     createdAt: Date.now(),
                     updatedAt: Date.now(),
@@ -827,7 +827,7 @@ describe('settings', () => {
                     name: 'Server Profile',
                     anthropicConfig: {},
                     environmentVariables: [],
-                    compatibility: { claude: true, codex: true },
+                    compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                     isBuiltIn: false,
                     createdAt: 1000,
                     updatedAt: 1000,
@@ -846,7 +846,7 @@ describe('settings', () => {
                     name: 'Local Profile',
                     anthropicConfig: {},
                     environmentVariables: [],
-                    compatibility: { claude: true, codex: true, gemini: true },
+                    compatibility: { claude: true, codex: true, gemini: true, kimi: true },
                     isBuiltIn: false,
                     createdAt: 2000,
                     updatedAt: 2000,
