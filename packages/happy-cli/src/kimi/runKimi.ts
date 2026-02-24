@@ -33,7 +33,7 @@ import type { ApiSessionClient } from '@/api/apiSession';
 
 import { createKimiBackend } from '@/agent/factories/kimi';
 import type { AgentBackend, AgentMessage } from '@/agent';
-import { GeminiDisplay } from '@/ui/ink/GeminiDisplay';
+import { KimiDisplay } from '@/ui/ink/KimiDisplay';
 import { GeminiPermissionHandler } from '@/gemini/utils/permissionHandler';
 import type { PermissionMode } from '@/api/types';
 import { CHANGE_TITLE_INSTRUCTION } from '@/kimi/constants';
@@ -309,7 +309,7 @@ export async function runKimi(opts: {
     console.clear();
     const DisplayComponent = () => {
       const currentModelValue = displayedModel || 'kimi-code/kimi-for-coding';
-      return React.createElement(GeminiDisplay, {
+      return React.createElement(KimiDisplay, {
         messageBuffer,
         logPath: process.env.DEBUG ? logger.getLogPath() : undefined,
         currentModel: currentModelValue,
